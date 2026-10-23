@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>R-B SURE KING 👑</title>
+<meta name="theme-color" content="#07061a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap">
+<style>
+:root{
+  --bg:#06051a; --card:#0c0b24;
+  --p1:#7c3aed; --p2:#a78bfa; --b1:#3b82f6; --b2:#60a5fa;
+  --txt:#c4b5fd; --mut:#8b86b8;
+  --f:'Orbitron',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  background:var(--bg);color:var(--txt);font-family:var(--f);
+  min-height:100dvh;display:flex;align-items:center;justify-content:center;
+  padding:24px 16px;overflow-x:hidden;position:relative;
+}
+/* background glow */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(60% 40% at 50% 8%,rgba(124,58,237,.38),transparent 70%),
+    radial-gradient(70% 45% at 50% 105%,rgba(59,130,246,.30),transparent 70%),
+    linear-gradient(180deg,#07061a,#0a0830 60%,#0d0a3a);
+}
+.orb{position:fixed;border-radius:50%;filter:blur(70px);z-index:-1;opacity:.5;will-change:transform;animation:float 9s ease-in-out infinite}
+.orb.a{width:240px;height:240px;background:#6d28d9;top:-60px;left:-80px}
+.orb.b{width:260px;height:260px;background:#2563eb;bottom:-90px;right:-90px;animation-delay:-4s}
+@keyframes float{50%{transform:translate3d(20px,24px,0)}}
+
+.card{
+  width:100%;max-width:400px;position:relative;
+  background:linear-gradient(180deg,rgba(18,16,48,.92),rgba(9,8,28,.95));
+  border-radius:28px;padding:34px 22px 28px;text-align:center;
+  box-shadow:0 0 0 1px rgba(139,92,246,.45),0 20px 60px rgba(0,0,0,.6),0 0 60px rgba(99,102,241,.18);
+  animation:rise .7s cubic-bezier(.2,.8,.2,1) both;
+}
+.card::before{ /* top glow line */
+  content:"";position:absolute;top:0;left:12%;right:12%;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--b2),var(--p2),transparent);
+}
+@keyframes rise{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+
+.tag{font-size:11px;letter-spacing:.42em;color:var(--b2);font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px}
+.tag i{font-style:normal;font-size:9px}
+
+/* avatar */
+.avatar{position:relative;width:176px;height:176px;margin:26px auto 22px}
+.avatar::before{ /* spinning ring */
+  content:"";position:absolute;inset:-6px;border-radius:50%;
+  background:conic-gradient(from 0deg,var(--b1),var(--p1),var(--p2),var(--b2),var(--b1));
+  animation:spin 6s linear infinite;
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 7px),#000 calc(100% - 6px));
+          mask:radial-gradient(farthest-side,transparent calc(100% - 7px),#000 calc(100% - 6px));
+}
+.avatar::after{ /* breathing glow */
+  content:"";position:absolute;inset:-8px;border-radius:50%;
+  box-shadow:0 0 40px 6px rgba(124,58,237,.65),0 0 90px 10px rgba(59,130,246,.35);
+  animation:pulse 2.6s ease-in-out infinite;pointer-events:none;
+}
+.avatar img{
+  width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
+  border:5px solid #0c0b24;background:#14123a;position:relative;z-index:1;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{opacity:.55;transform:scale(1.03)}}
+
+h1{
+  font-size:clamp(20px,6.4vw,28px);font-weight:700;letter-spacing:.1em;line-height:1.15;white-space:nowrap;
+  background:linear-gradient(180deg,#e9ddff,#a78bfa 70%,#8b5cf6);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 14px rgba(167,139,250,.35));
+}
+.sub{
+  display:flex;align-items:center;gap:12px;margin:14px auto 0;max-width:260px;
+  font-size:10px;letter-spacing:.3em;color:var(--mut);
+}
+.sub::before,.sub::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(139,92,246,.7))}
+.sub::after{transform:scaleX(-1)}
+
+.desc{margin-top:22px;font-size:14px;line-height:1.6;color:#a9a3d6;font-weight:500;letter-spacing:.02em}
+
+/* button */
+.btn{
+  position:relative;display:flex;align-items:center;justify-content:center;gap:12px;
+  margin-top:26px;height:60px;border-radius:16px;text-decoration:none;color:#fff;
+  font-family:var(--f);font-weight:700;font-size:16px;letter-spacing:.14em;
+  background:linear-gradient(100deg,#7c3aed,#6366f1 55%,#3b82f6);
+  box-shadow:0 0 0 1px rgba(196,181,253,.55) inset,0 8px 30px rgba(99,102,241,.55),0 0 36px rgba(124,58,237,.45);
+  overflow:hidden;transition:transform .15s ease,filter .15s ease;
+  animation:glow 2.4s ease-in-out infinite;
+  touch-action:manipulation;
+}
+.btn::before{ /* shine sweep */
+  content:"";position:absolute;top:0;bottom:0;width:60px;left:-80px;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);
+  transform:skewX(-20deg);animation:shine 2.8s ease-in-out infinite;
+}
+.btn::after{ /* outgoing ripple ring */
+  content:"";position:absolute;inset:0;border-radius:16px;border:2px solid rgba(255,255,255,.7);
+  animation:ring 2.4s ease-out infinite;opacity:0;
+}
+.btn:active{transform:scale(.97);filter:brightness(1.12)}
+.btn svg{width:22px;height:22px;flex:none;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+@keyframes shine{0%{left:-80px}55%,100%{left:120%}}
+@keyframes ring{0%{opacity:.8;transform:scale(1)}70%,100%{opacity:0;transform:scale(1.08,1.35)}}
+@keyframes glow{50%{box-shadow:0 0 0 1px rgba(196,181,253,.7) inset,0 8px 34px rgba(99,102,241,.8),0 0 56px rgba(124,58,237,.7)}}
+
+.hint{margin-top:16px;font-size:11.5px;color:#6f6a9d;letter-spacing:.06em}
+
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-top:20px;font-size:10px;letter-spacing:.14em;color:#9d97cf;font-weight:500}
+.chips span{display:inline-flex;align-items:center;gap:7px}
+.chips span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--b2);box-shadow:0 0 8px var(--b2)}
+
+.disc{
+  margin-top:22px;padding-top:16px;border-top:1px solid rgba(139,92,246,.18);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:10.5px;line-height:1.55;color:#6b6794;
+}
+.disc b{color:#8b86b8}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="orb a"></div><div class="orb b"></div>
+
+<main class="card">
+  <div class="tag"><i>◆</i> R-B SURE KING <i>◆</i></div>
+
+  <div class="avatar">
+    <img src="img.jpg" alt="R-B SURE KING" width="176" height="176" fetchpriority="high" decoding="async">
+  </div>
+
+  <h1>R-B SURE KING 👑</h1>
+  <div class="sub">TELEGRAM CHANNEL</div>
+
+  <p class="desc">Daily market levels and setups. Free to join.</p>
+
+  <a class="btn" id="join" href="https://t.me/+Zb_ACbUjnbYwN2Zl" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.5 11.4 21 3.6c.9-.4 1.7.2 1.4 1.5l-3.1 14.6c-.2 1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.7-7.9c.4-.3-.1-.5-.6-.2L7.2 13.5l-4.6-1.4c-1-.3-1-1 .2-1.5Z"/></svg>
+    JOIN TELEGRAM
+  </a>
+  <p class="hint">Tap to open Telegram and send your request.</p>
+
+  <div class="chips"><span>100% FREE</span><span>INSTANT ACCESS</span><span>DAILY UPDATES</span></div>
+
+  <p class="disc"><b>Disclaimer:</b> Content shared on this channel is for informational purposes only. Trading involves risk. Please verify information independently before making any decisions based on it.</p>
+</main>
+
+<script>
+// fast: warm up connection to Telegram on touch/hover
+(function(){
+  var l=document.createElement('link');l.rel='preconnect';l.href='https://t.me';document.head.appendChild(l);
+})();
+</script>
+</body>
+</html>
